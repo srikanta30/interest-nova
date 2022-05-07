@@ -1,4 +1,4 @@
-import { Table, Spin } from "antd";
+import { Table, Spin, Tooltip } from "antd";
 import { FacebookFilled, GoogleOutlined } from "@ant-design/icons";
 import styles from "./results.module.css";
 
@@ -20,8 +20,8 @@ const Results = ({ tableData, loading }) => {
       render: (record) => {
         return (
           <div className={styles.actions_div}>
-            <a href={`https://www.facebook.com/search/pages/?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><FacebookFilled style={{ color: "#001529", marginLeft: 12 }}/></a>
-            <a href={`https://www.google.com/search?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><GoogleOutlined style={{ color: "#001529" , marginLeft: 12 }}/></a>   
+            <Tooltip title="Search on Facebook"><a href={`https://www.facebook.com/search/pages/?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><FacebookFilled style={{ color: "#001529", marginLeft: 12 }}/></a></Tooltip>
+           <Tooltip title="Search on Google"><a href={`https://www.google.com/search?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><GoogleOutlined style={{ color: "#001529" , marginLeft: 12 }}/></a></Tooltip>
           </div>
         );
       },
