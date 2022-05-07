@@ -1,0 +1,11 @@
+.search_input {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.search_button {
+    margin-left: 5px;
+}
