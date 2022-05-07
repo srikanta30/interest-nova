@@ -48,7 +48,7 @@ return (
         <Results tableData={dataSource} loading={loading}/>
       </div>
     </Content>
-    <Footer style={{ textAlign: 'center' }}>Interest Nova 🧭 ©{new Date().getFullYear()} Created by <a href="https://in.linkedin.com/in/srikanta30">Srikanta Banerjee</a></Footer>
+    <Footer style={{ textAlign: 'center' }}>Interest Nova 🧭 ©{new Date().getFullYear()} Created by <a href="https://in.linkedin.com/in/srikanta30" target="_blank" rel="noreferrer">Srikanta Banerjee</a></Footer>
   </Layout>
   </div>
 )};
