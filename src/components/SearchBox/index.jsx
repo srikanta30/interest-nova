@@ -22,7 +22,7 @@ return (
      <Form.Item label="Search Term" style={{width:"70%"}} rules={[{required: true, message: "Please enter a search term."}]}>
     <Input placeholder="Search for a broad interest or category..." value={query} onChange={(e) => setQuery(e.target.value)}/>
     </Form.Item> 
-    <Form.Item label="Access Token" style={{width:"25%"}} rules={[{required: true, message: "Please enter a valid access token."}]}>
+    <Form.Item label={<div>Access Token <a href="https://docs.google.com/document/d/e/2PACX-1vRU-VRUkfwAhQlKbpvPXjTVvCWXvJdkcIQr7HHwB7ut9SdIDcX5ooFap0ERBadrW5GZmT9oe1uhPm0r/pub" target="_blank" rel="noreferrer">[Get Here]</a></div>} style={{width:"25%"}} rules={[{required: true, message: "Please enter a valid access token."}]}>
     <Input.Password placeholder="Enter access token" value={key} onChange={(e) => setKey(e.target.value)}/>
     </Form.Item>
     <Form.Item label=" ">

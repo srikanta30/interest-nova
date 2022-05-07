@@ -1,14 +1,25 @@
-import { Layout, Menu} from 'antd';
+import { Layout} from 'antd';
 import styles from './layout.module.css';
 import SearchBox from '../SearchBox';
 import Results from '../Results';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const { Header, Content, Footer } = Layout;
 
 const LayoutComponent = () => {
 
   const [dataSource, setDataSource] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+        setLoading(false);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [dataSource]);
 
   const handleSearch = async (query, key) => {
     const searchQuery = query.trim().split(" ").join("+");
@@ -30,16 +41,11 @@ return (
   <Layout className="layout">
     <Header>
       <h1 className={styles.menu_header}>Interest Nova 🧭</h1>
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-      />
     </Header>
     <Content style={{ padding: '0 50px' }}>
       <div className="site-layout-content">
         <SearchBox handleClick={handleSearch}/>
-        <Results tableData={dataSource}/>
+        <Results tableData={dataSource} loading={loading}/>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }}>Interest Nova 🧭 ©{new Date().getFullYear()} Created by <a href="https://in.linkedin.com/in/srikanta30">Srikanta Banerjee</a></Footer>

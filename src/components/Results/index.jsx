@@ -1,20 +1,8 @@
 import { Table, Spin } from "antd";
 import { FacebookFilled, GoogleOutlined } from "@ant-design/icons";
 import styles from "./results.module.css";
-import { useState, useEffect } from "react";
 
-const Results = ({ tableData }) => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-        setLoading(false);
-    }, 2000);
-    return () => {
-      setLoading(true);
-      clearTimeout(timer);
-    };
-  }, [tableData]);
+const Results = ({ tableData, loading }) => {
 
   const columns = [
     { key: "1", title: "INTERESTS", dataIndex: "interest" },
