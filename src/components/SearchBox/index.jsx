@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import {Input, Button, Form} from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import styles from './searchbox.module.css';
-import useSessionStorage from '../../hooks/useSession';
+import useLocalStorage from '../../hooks/useLocal';
 
 const SearchBox = ({handleClick}) => {
 
 const [form] = Form.useForm();
 
 const [query, setQuery] = useState("");
-const [key, setKey] = useSessionStorage("key", "");
+const [key, setKey] = useLocalStorage("key", "");
 
 const onFinish = () =>{
 handleClick(query, key);
