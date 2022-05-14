@@ -48,7 +48,7 @@ return (
         <Results tableData={dataSource} loading={loading}/>
       </div>
     </Content>
-    <Footer style={{ textAlign: 'center' }}>Interest Nova 🧭 ©{new Date().getFullYear()} Created by <a href="https://in.linkedin.com/in/srikanta30" target="_blank" rel="noreferrer">Srikanta Banerjee</a></Footer>
+    <Footer style={{ textAlign: 'center' }}>Interest Nova 🧭 ©{new Date().getFullYear()} Created by <a href="https://in.linkedin.com/in/srikanta30" target="_blank" rel="noreferrer">Srikanta Banerjee</a> | <a href="https://docs.google.com/document/d/e/2PACX-1vTXEkU6pKM__pmvXBzbXoPU9zBknBLf3koqIeE1A7PKFbh9M2qav-G3uDuxBoNfm8bUQaksXcbGKbmc/pub" target="_blank" rel="noreferrer">Privacy Policy</a> </Footer>
   </Layout>
   </div>
 )};
