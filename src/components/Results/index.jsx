@@ -16,12 +16,11 @@ const Results = ({ tableData, loading }) => {
     {
       key: "4",
       title: "ACTIONS",
-      dataIndex: "search",
       render: (record) => {
         return (
           <div className={styles.actions_div}>
-            <Tooltip title="Search on Facebook"><a href={`https://www.facebook.com/search/pages/?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><FacebookFilled style={{ color: "#001529", marginLeft: 12 }}/></a></Tooltip>
-           <Tooltip title="Search on Google"><a href={`https://www.google.com/search?q=${record.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><GoogleOutlined style={{ color: "#001529" , marginLeft: 12 }}/></a></Tooltip>
+            <Tooltip title="Search on Facebook"><a href={`https://www.facebook.com/search/pages/?q=${record.interest.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><FacebookFilled style={{ color: "#001529", marginLeft: 12 }}/></a></Tooltip>
+           <Tooltip title="Search on Google"><a href={`https://www.google.com/search?q=${record.interest.trim().split(" ").join("+")}`} target="_blank" rel="noreferrer"><GoogleOutlined style={{ color: "#001529" , marginLeft: 12 }}/></a></Tooltip>
           </div>
         );
       },
@@ -35,7 +34,9 @@ const Results = ({ tableData, loading }) => {
          <Spin size="large" />
         </>
       ) : (
-        <Table dataSource={tableData} columns={columns} />
+        <Table dataSource={tableData} columns={columns} scroll={{
+          x: true,
+        }} />
       )}
     </div>
   );
