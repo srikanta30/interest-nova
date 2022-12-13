@@ -25,7 +25,7 @@ const LayoutComponent = () => {
 
           const searchQuery = query.trim().split(" ").join("+");
 
-          const res = await axios.get(`https://interest-nova.herokuapp.com/search?q=${searchQuery}`);
+          const res = await axios.get(`https://interest-nova-server.onrender.com/search?q=${searchQuery}`);
 
           if (res.data.success) {
 
